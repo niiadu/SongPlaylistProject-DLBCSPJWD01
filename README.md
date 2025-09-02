@@ -57,7 +57,7 @@ git clone https://github.com/niiadu/SongPlaylistProject-DLBCSPJWD01.git
 cd SongPlaylistProject-DLBCSPJWD01
 ```
 
-**2. Environment Setup **
+**2. Environment Setup**
 Update the .env file in backend/
 ```
 MONGO_URI=your_mongodb_connection_string_here
@@ -81,6 +81,7 @@ npm install
 ```
 
 **4. Recommended Song Setup**
+
 Go back to the main directory **SongPlaylistProject-DLBCSPJWD01** from the backend directory.
 To run a script to populate the database with the recommended songs
 ```
