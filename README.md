@@ -166,4 +166,4 @@ The application should be accessible on http://localhost:2000
 - **Expected:** User session persists across page refreshes, new tabs, and logout
 
 ## 👨🏼‍🦰Author
-Created by NiiAdu, as part of IU Java and Web Development Project.
+Created by niiadu as part of IU Java and Web Development Project.
