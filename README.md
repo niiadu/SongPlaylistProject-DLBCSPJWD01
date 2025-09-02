@@ -33,6 +33,7 @@ music-playlist-app/
 │   ├── signup.html
 │   └── dashboard.html
 └── README.md
+├── sample-songs.js
 ```
 
 ## Features
