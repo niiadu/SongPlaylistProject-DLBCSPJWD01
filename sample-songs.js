@@ -38,7 +38,7 @@ const sampleSongs = [
 async function populateDatabase() {
     try {
         // Connect to MongoDB
-        await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://jonasadjintettey_db_user:HnADAJghFggMmA8F@cluster0.a5996ht.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+        await mongoose.connect(process.env.MONGODB_URI || '');
         console.log('Connected to MongoDB');
 
         // Clear existing recommended songs
