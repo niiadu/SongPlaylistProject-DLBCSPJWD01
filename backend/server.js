@@ -1,8 +1,7 @@
-// Import required dependencies
-const express = require('express');      // Web framework for Node.js
-const cors = require('cors');           // Enable Cross-Origin Resource Sharing
-const path = require('path');           // Handle file and directory paths
-require('dotenv').config();             // Load environment variables from .env file
+const express = require('express');      
+const cors = require('cors');           
+const path = require('path');           
+require('dotenv').config();             
 
 // Import custom modules
 const connectDB = require('./config/db');          // Database connection function
@@ -32,7 +31,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

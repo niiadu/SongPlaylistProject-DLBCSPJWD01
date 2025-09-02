@@ -1,4 +1,3 @@
-// Import MongoDB ODM (Object Document Mapper)
 const mongoose = require('mongoose');
 
 /**
@@ -8,7 +7,7 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
   try {
     // Attempt to connect to MongoDB
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/music-playlist');
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log('MongoDB connected successfully');
   } catch (error) {
     // Log error and exit process if connection fails

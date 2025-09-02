@@ -1,4 +1,3 @@
-// Import MongoDB ODM
 const mongoose = require('mongoose');
 
 /**
@@ -9,20 +8,20 @@ const mongoose = require('mongoose');
 const songSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,     // Song title is mandatory
-    trim: true          // Remove leading/trailing whitespace
+    required: true,     
+    trim: true          
   },
   artist: {
     type: String,
-    required: true,     // Artist name is mandatory
-    trim: true          // Remove leading/trailing whitespace
+    required: true,     
+    trim: true          
   },
   isRecommended: {
     type: Boolean,
-    default: false      // By default, songs are not recommended (user-created)
+    default: false      
   }
 }, {
-  timestamps: true      // Add createdAt and updatedAt timestamps
+  timestamps: true      
 });
 
 // Export the Song model

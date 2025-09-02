@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check if user is authenticated
     if (!checkAuthentication()) {
-        return; // Stop execution if not authenticated
+        return; 
     }
     
     // Initialize dashboard

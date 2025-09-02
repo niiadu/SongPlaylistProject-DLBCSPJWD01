@@ -1,8 +1,7 @@
-// Import required dependencies
 const express = require('express');
-const jwt = require('jsonwebtoken');    // JWT token creation
-const User = require('../models/User'); // User model
-const router = express.Router();       // Express router for modular routes
+const jwt = require('jsonwebtoken');    
+const User = require('../models/User'); 
+const router = express.Router();       
 
 /**
  * POST /api/auth/register
@@ -31,8 +30,8 @@ router.post('/register', async (req, res) => {
 
     // Generate JWT token for automatic login
     const token = jwt.sign(
-      { userId: user._id },                           // Payload
-      process.env.JWT_SECRET || 'your-secret-key',   // Secret key
+      { userId: user._id },                           
+      process.env.JWT_SECRET,   
       { expiresIn: '7d' }                            // Token expires in 7 days
     );
 
@@ -75,8 +74,8 @@ router.post('/login', async (req, res) => {
 
     // Generate JWT token for authenticated session
     const token = jwt.sign(
-      { userId: user._id },                           // Payload
-      process.env.JWT_SECRET || 'your-secret-key',   // Secret key
+      { userId: user._id },                           
+      process.env.JWT_SECRET,   
       { expiresIn: '7d' }                            // Token expires in 7 days
     );
 

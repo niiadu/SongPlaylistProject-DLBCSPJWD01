@@ -1,5 +1,3 @@
-/* ==================== UTILITY CLASSES ==================== */
-
 /**
  * Loading State Animation
  * Spinner animation for data loading states
@@ -111,7 +109,6 @@ body {
     width: 100%;
 }
 
-/* ==================== AUTHENTICATION PAGES ==================== */
 
 /**
  * Welcome and Authentication Cards
@@ -273,8 +270,6 @@ body {
     text-decoration: underline;
 }
 
-/* ==================== DASHBOARD LAYOUT ==================== */
-
 /**
  * Dashboard Header
  * Top navigation with user info and logout
@@ -343,8 +338,6 @@ body {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 
-/* ==================== SONGS GRID ==================== */
-
 /**
  * Responsive Songs Grid
  * Auto-sizing grid for recommended songs
@@ -401,8 +394,6 @@ body {
     min-width: auto;
 }
 
-/* ==================== FORMS ==================== */
-
 /**
  * Form Layout
  * Responsive forms for creating playlists and adding songs
@@ -433,8 +424,6 @@ body {
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
-
-/* ==================== PLAYLISTS ==================== */
 
 /**
  * Playlists Grid Container
@@ -559,8 +548,6 @@ body {
     font-style: italic;
     padding: 40px;
 }
-
-/* ==================== RESPONSIVE BREAKPOINTS ==================== */
 
 /**
  * Tablet Styles (768px and below)
@@ -749,7 +736,6 @@ body {
     }
 }
 
-/* ==================== UTILITY CLASSES ==================== */
 
 /**
  * Loading State Animation

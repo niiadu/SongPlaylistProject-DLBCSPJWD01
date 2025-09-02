@@ -1,4 +1,3 @@
-// Import MongoDB ODM
 const mongoose = require('mongoose');
 
 /**

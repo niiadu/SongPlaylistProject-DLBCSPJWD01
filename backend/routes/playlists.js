@@ -1,8 +1,7 @@
-// Import required dependencies
 const express = require('express');
-const Playlist = require('../models/Playlist'); // Playlist model
-const Song = require('../models/Song');         // Song model
-const auth = require('../middleware/auth');     // Authentication middleware
+const Playlist = require('../models/Playlist'); 
+const Song = require('../models/Song');         
+const auth = require('../middleware/auth');    
 const router = express.Router();
 
 /**
@@ -14,8 +13,8 @@ router.get('/', auth, async (req, res) => {
   try {
     // Find playlists for current user, populate song details, sort by newest first
     const playlists = await Playlist.find({ user: req.user._id })
-      .populate('songs')                // Replace song IDs with full song objects
-      .sort({ createdAt: -1 });        // Sort by creation date (newest first)
+      .populate('songs')                
+      .sort({ createdAt: -1 });        
     res.json(playlists);
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
@@ -34,8 +33,8 @@ router.post('/', auth, async (req, res) => {
     const playlist = new Playlist({
       name,
       description,
-      user: req.user._id,   // Associate with current user
-      songs: []             // Start with empty songs array
+      user: req.user._id,   
+      songs: []             
     });
     
     await playlist.save();

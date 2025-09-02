@@ -1,6 +1,5 @@
-// Import required dependencies
-const jwt = require('jsonwebtoken');    // JWT token verification
-const User = require('../models/User'); // User model
+const jwt = require('jsonwebtoken');    
+const User = require('../models/User'); 
 
 /**
  * Authentication Middleware
@@ -18,7 +17,7 @@ const auth = async (req, res, next) => {
     }
 
     // Verify token using secret key
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     
     // Find user by ID from token payload
     const user = await User.findById(decoded.userId);

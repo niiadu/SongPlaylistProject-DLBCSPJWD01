@@ -1,7 +1,6 @@
-// Import required dependencies
 const express = require('express');
-const Song = require('../models/Song');     // Song model
-const auth = require('../middleware/auth'); // Authentication middleware
+const Song = require('../models/Song');     
+const auth = require('../middleware/auth');
 const router = express.Router();
 
 /**
