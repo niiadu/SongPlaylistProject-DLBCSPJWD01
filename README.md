@@ -42,6 +42,9 @@ music-playlist-app/
 - ➕ Add songs from Recommended List
 - 📢 Add customs songs
 
+## Design Choice
+I chose this tech stack and design for this project because there were many more resources and a lot more people use this tech stack for projects. This made it easier for me to get help from online sources, such as Stack Overflow, when I encountered a block or challenge during my development sessions.
+
 ## Tech Stack
 - **Frontend:** HTML, CSS, and JavaScript
 - **Backend:** NodeJS, ExpressJS
