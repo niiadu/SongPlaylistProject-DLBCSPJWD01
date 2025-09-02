@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Responsive meta tags for optimal mobile display -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Music Playlist App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Main responsive container -->
+    <div class="container">
+        <!-- Dashboard header with user info and logout -->
+        <header class="header">
+            <h1>🎵 My Music</h1>
+            <div class="user-info">
+                <!-- Dynamic user greeting populated by JavaScript -->
+                <span id="userGreeting"></span>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main dashboard content area -->
+        <div class="dashboard-content">
+            
+            <!-- Step 1: Create New Playlist Section -->
+            <section class="section">
+                <h2>📁 Step 1: Create New Playlist</h2>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Start by creating a playlist, then you can add your favorite songs to it!
+                </p>
+                <!-- Form for creating new playlists -->
+                <form id="createPlaylistForm" class="create-form">
+                    <div class="form-row">
+                        <input type="text" id="playlistName" 
+                               placeholder="Enter playlist name (e.g., 'My Favorites')" 
+                               required maxlength="50">
+                        <input type="text" id="playlistDescription" 
+                               placeholder="Add description (optional)" 
+                               maxlength="200">
+                        <button type="submit" class="btn btn-primary">
+                            ➕ Create Playlist
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Quick playlist suggestions -->
+                <div class="playlist-suggestions" style="margin-top: 15px;">
+                    <small style="color: #666;">Quick suggestions:</small>
+                    <div class="suggestion-buttons" style="margin-top: 8px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <button class="btn-suggestion" onclick="fillPlaylistName('My Favorites')">My Favorites</button>
+                        <button class="btn-suggestion" onclick="fillPlaylistName('Workout Mix')">Workout Mix</button>
+                        <button class="btn-suggestion" onclick="fillPlaylistName('Chill Vibes')">Chill Vibes</button>
+                        <button class="btn-suggestion" onclick="fillPlaylistName('Party Songs')">Party Songs</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2: Add Songs Section -->
+            <section class="section">
+                <h2>🎵 Step 2: Add Songs to Your Playlists</h2>
+                
+                <!-- Add Custom Song Subsection -->
+                <div class="add-song-container">
+                    <h3 style="color: #333; margin-bottom: 15px;">Add Custom Songs</h3>
+                    <p style="color: #666; margin-bottom: 20px;">
+                        Add any song by entering the artist name and song title.
+                    </p>
+                    
+                    <!-- Form for adding custom songs to playlists -->
+                    <form id="addSongForm" class="create-form">
+                        <div class="form-row">
+                            <input type="text" id="songArtist" 
+                                   placeholder="Artist name (e.g., 'The Beatles')" 
+                                   required maxlength="100">
+                            <input type="text" id="songTitle" 
+                                   placeholder="Song title (e.g., 'Hey Jude')" 
+                                   required maxlength="100">
+                            <!-- Dropdown populated with user's playlists -->
+                            <select id="targetPlaylist" required>
+                                <option value="">Select playlist first</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary">
+                                ➕ Add Song
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- No playlists message -->
+                    <div id="noPlaylistsMessage" class="empty-state" style="display: none; padding: 20px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; margin-top: 15px;">
+                        <p style="color: #856404; margin: 0;">
+                            📝 <strong>Create a playlist first!</strong><br>
+                            You need to create at least one playlist before you can add songs to it.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Add from Recommended Songs Subsection -->
+                <div class="recommended-section" style="margin-top: 40px;">
+                    <h3 style="color: #333; margin-bottom: 15px;">Add from Recommended Songs</h3>
+                    <p style="color: #666; margin-bottom: 20px;">
+                        Choose from our curated list of popular songs.
+                    </p>
+                    <!-- Grid container for recommended songs (populated by JavaScript) -->
+                    <div id="recommendedSongs" class="songs-grid"></div>
+                </div>
+            </section>
+
+            <!-- Step 3: Your Playlists Section -->
+            <section class="section">
+                <h2>📚 Your Playlists</h2>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Manage your created playlists and their songs.
+                </p>
+                <!-- Container for user's playlists (populated by JavaScript) -->
+                <div id="userPlaylists" class="playlists-container"></div>
+                
+                <!-- Getting started message for new users -->
+                <div id="gettingStartedMessage" class="empty-state" style="display: none; padding: 30px; text-align: center;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">🎵 Welcome to Your Music Collection!</h3>
+                    <p style="color: #666; margin-bottom: 20px;">
+                        Get started by creating your first playlist above, then add your favorite songs to it.
+                    </p>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: left; max-width: 500px; margin: 0 auto;">
+                        <h4 style="color: #333; margin-bottom: 10px;">How it works:</h4>
+                        <ol style="color: #666; line-height: 1.6;">
+                            <li><strong>Create a playlist</strong> - Give it a name like "My Favorites"</li>
+                            <li><strong>Add songs</strong> - Enter artist name and song title</li>
+                            <li><strong>Manage</strong> - Remove songs or delete playlists as needed</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Load JavaScript modules -->
+    <script src="js/dashboard.js"></script>
+    <script src="js/playlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,845 @@
+/* ==================== UTILITY CLASSES ==================== */
+
+/**
+ * Loading State Animation
+ * Spinner animation for data loading states
+ */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/**
+ * Playlist Suggestion Buttons
+ * Quick suggestion buttons for playlist names
+ */
+.btn-suggestion {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #667eea;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-suggestion:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/**
+ * Step Headers
+ * Enhanced styling for step-by-step process
+ */
+.section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/**
+ * Enhanced Empty State
+ * Better styling for getting started messages
+ */
+.empty-state {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+.empty-state h3
+    margin-bottom/**
+ * Global Reset and Base Styles
+ * Removes default browser styling and sets consistent box-sizing
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**
+ * Body Styling
+ * Sets main background, font, and ensures full viewport height
+ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/**
+ * Main Container
+ * Responsive container with max-width and centered alignment
+ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* ==================== AUTHENTICATION PAGES ==================== */
+
+/**
+ * Welcome and Authentication Cards
+ * Centered cards for login, signup, and welcome pages
+ */
+.welcome-card, .auth-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    width: 90%;
+}
+
+/**
+ * Welcome Page Title
+ * Large, colorful heading with emoji
+ */
+.welcome-card h1 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+/**
+ * Welcome Page Description
+ */
+.welcome-card p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/**
+ * Button Container
+ * Flexible layout for action buttons
+ */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/**
+ * Primary Button Styles
+ * Main action buttons with hover effects
+ */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    min-width: 120px;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+}
+
+/**
+ * Form Group Styling
+ * Consistent spacing and alignment for form inputs
+ */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+/**
+ * Input Field Styling
+ * Responsive inputs with focus states
+ */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/**
+ * Message Display
+ * Success and error message styling
+ */
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/**
+ * Authentication Links
+ * Links between login and signup pages
+ */
+.auth-link {
+    margin-top: 20px;
+    color: #666;
+}
+
+.auth-link a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== DASHBOARD LAYOUT ==================== */
+
+/**
+ * Dashboard Header
+ * Top navigation with user info and logout
+ */
+.header {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.header h1 {
+    color: #667eea;
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/**
+ * User Information Display
+ * Shows username and logout button
+ */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.user-info span {
+    color: #666;
+    font-weight: 600;
+}
+
+/**
+ * Dashboard Content Layout
+ * Vertical stacking of sections with consistent spacing
+ */
+.dashboard-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/**
+ * Content Sections
+ * Individual sections for different features
+ */
+.section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+/* ==================== SONGS GRID ==================== */
+
+/**
+ * Responsive Songs Grid
+ * Auto-sizing grid for recommended songs
+ */
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+/**
+ * Individual Song Cards
+ * Cards displaying song information with hover effects
+ */
+.song-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.song-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.song-info h4 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.song-info p {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+/**
+ * Song Action Buttons
+ * Buttons for adding songs to playlists
+ */
+.song-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    min-width: auto;
+}
+
+/* ==================== FORMS ==================== */
+
+/**
+ * Form Layout
+ * Responsive forms for creating playlists and adding songs
+ */
+.create-form {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.form-row input, .form-row select {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-row input:focus, .form-row select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ==================== PLAYLISTS ==================== */
+
+/**
+ * Playlists Grid Container
+ * Responsive grid for displaying user playlists
+ */
+.playlists-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/**
+ * Individual Playlist Cards
+ * Cards containing playlist information and songs
+ */
+.playlist-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.playlist-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/**
+ * Playlist Header
+ * Title and action buttons for each playlist
+ */
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.playlist-header h3 {
+    color: #333;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/**
+ * Playlist Songs Container
+ * List of songs within each playlist
+ */
+.playlist-songs {
+    margin-top: 15px;
+}
+
+/**
+ * Individual Song in Playlist
+ * Song display with remove functionality
+ */
+.playlist-song {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.song-details {
+    flex: 1;
+    min-width: 200px;
+}
+
+.song-details strong {
+    color: #333;
+    display: block;
+}
+
+.song-details small {
+    color: #666;
+}
+
+/**
+ * Action Button Styles
+ * Various button types for different actions
+ */
+.btn-danger {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+/**
+ * Empty State Styling
+ * Displayed when no content is available
+ */
+.empty-state {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px;
+}
+
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+
+/**
+ * Tablet Styles (768px and below)
+ * Adjustments for medium-sized screens
+ */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .welcome-card, .auth-card {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+    
+    .welcome-card h1 {
+        font-size: 2em;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-row input, .form-row select {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .playlists-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .songs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section {
+        padding: 20px 15px;
+    }
+    
+    .song-actions {
+        justify-content: center;
+    }
+    
+    .playlist-header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+}
+
+/**
+ * Mobile Styles (480px and below)
+ * Optimizations for small mobile screens
+ */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .welcome-card, .auth-card {
+        padding: 20px 15px;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+    
+    .welcome-card h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    
+    .welcome-card p {
+        font-size: 1em;
+        margin-bottom: 25px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .button-group {
+        gap: 10px;
+    }
+    
+    .form-group input {
+        padding: 10px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .header {
+        padding: 15px 10px;
+    }
+    
+    .section {
+        padding: 15px 10px;
+        margin-bottom: 20px;
+    }
+    
+    .song-card {
+        padding: 12px;
+    }
+    
+    .playlist-card {
+        padding: 15px;
+    }
+    
+    .playlist-song {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .song-details {
+        margin-bottom: 10px;
+        min-width: 100%;
+    }
+    
+    .playlists-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/**
+ * Large Screen Styles (1200px and above)
+ * Optimizations for desktop and large displays
+ */
+@media (min-width: 1200px) {
+    .songs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    
+    .playlists-container {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+    
+    .dashboard-content {
+        gap: 40px;
+    }
+}
+
+/**
+ * Extra Small Mobile (320px and below)
+ * Adjustments for very small screens
+ */
+@media (max-width: 320px) {
+    .welcome-card, .auth-card {
+        padding: 15px 10px;
+        margin: 10px auto;
+    }
+    
+    .welcome-card h1 {
+        font-size: 1.5em;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.8em;
+    }
+    
+    .form-row input, .form-row select {
+        min-width: 100%;
+        font-size: 14px;
+    }
+    
+    .section {
+        padding: 10px;
+    }
+    
+    .song-card, .playlist-card {
+        padding: 10px;
+    }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/**
+ * Loading State Animation
+ * Spinner animation for data loading states
+ */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/**
+ * Responsive Text Sizing
+ * Fluid typography that scales with screen size
+ */
+.responsive-text {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+}
+
+/**
+ * Flexible Container
+ * Utility class for flexible layouts
+ */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+/**
+ * Hidden on Mobile
+ * Utility to hide elements on small screens
+ */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/**
+ * Show only on Mobile
+ * Utility to show elements only on small screens
+ */
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .show-mobile {
+        display: block;
+    }
+}
+
+/**
+ * Responsive Grid Utilities
+ * Additional grid options for different screen sizes
+ */
+.grid-responsive {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media (max-width: 768px) {
+    .grid-responsive {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-responsive {
+        gap: 10px;
+    }
+}

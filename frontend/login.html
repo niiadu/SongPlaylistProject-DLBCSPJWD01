@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Responsive meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Music Playlist App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Main responsive container -->
+    <div class="container">
+        <!-- Login form card -->
+        <div class="auth-card">
+            <h2>Login</h2>
+            <!-- User login form -->
+            <form id="loginForm">
+                <!-- Email input field -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="Enter your email">
+                </div>
+                <!-- Password input field -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Enter your password">
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <!-- Message display area for success/error feedback -->
+            <div id="message" class="message"></div>
+            <!-- Link to signup page -->
+            <p class="auth-link">
+                Don't have an account? <a href="signup.html">Sign up here</a>
+            </p>
+        </div>
+    </div>
+    <!-- Load authentication JavaScript -->
+    <script src="js/auth.js"></script>
+</body>
+</html>
