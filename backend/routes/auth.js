@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
     const token = jwt.sign(
       { userId: user._id },                           
       process.env.JWT_SECRET,   
-      { expiresIn: '7d' }                            // Token expires in 7 days
+      { expiresIn: '7d' }                            
     );
 
     // Send success response with token and user info

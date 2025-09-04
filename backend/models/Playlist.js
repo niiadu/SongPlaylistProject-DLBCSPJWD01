@@ -8,24 +8,24 @@ const mongoose = require('mongoose');
 const playlistSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,     // Playlist name is mandatory
-    trim: true          // Remove leading/trailing whitespace
+    required: true,     
+    trim: true          
   },
   description: {
     type: String,
-    trim: true          // Optional description field
+    trim: true          
   },
   user: {
-    type: mongoose.Schema.Types.ObjectId,  // Reference to User document
-    ref: 'User',        // Links to User model
-    required: true      // Every playlist must have an owner
+    type: mongoose.Schema.Types.ObjectId,  
+    ref: 'User',        
+    required: true      
   },
   songs: [{
-    type: mongoose.Schema.Types.ObjectId,  // Array of references to Song documents
-    ref: 'Song'         // Links to Song model
+    type: mongoose.Schema.Types.ObjectId,  
+    ref: 'Song'         
   }]
 }, {
-  timestamps: true      // Add createdAt and updatedAt timestamps
+  timestamps: true      
 });
 
 // Export the Playlist model

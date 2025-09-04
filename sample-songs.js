@@ -1,10 +1,7 @@
 /**
- * Sample Songs Script - Fixed Version
- * Run this script to populate your database with recommended songs
- * 
+ 
  * Usage:
- * 1. Ensure MongoDB is running
- * 2. Run: node sample-songs-fixed.js
+ * 1. Add recommended songs to the mongo db
  */
 
 const mongoose = require('mongoose');
