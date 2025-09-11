@@ -65,7 +65,8 @@ cd SongPlaylistProject-DLBCSPJWD01
 ```
 
 **2. Environment Setup**
-Update the .env file in backend/
+
+Create a .env file in backend/ with the following requirements
 ```
 MONGO_URI=your_mongodb_connection_string_here
 JWT_SECRET="your-secret"
@@ -83,7 +84,7 @@ PORT=2000
 
 **3. Backend Setup**
 ```
-cd backend
+cd backend/
 npm install
 ```
 
