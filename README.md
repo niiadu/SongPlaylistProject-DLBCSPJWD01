@@ -73,6 +73,7 @@ JWT_SECRET="your-secret"
 PORT=2000
 ```
 **MongoDB Atlas Credentials**
+
 The Atlas MongoDB credentials have been added to the title page of the project presentation slides.
 
 **3. Backend Setup**
