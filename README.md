@@ -72,15 +72,8 @@ MONGODB_URI=your_mongodb_connection_string_here
 JWT_SECRET="your-secret"
 PORT=2000
 ```
-**Set up your MongoDB Atlas Connection**
-1. Sign up on <a href="https://www.mongodb.com/products/platform">MongoDB Atlas Account</a>
-2. Create a new Cluster.
-3. Atlas allows access from your computer IP. You have an option to allow access from anywhere
-4. Go to Database Access → Add Database User
-5. Go to Network Access → Add IP Address (add 0.0.0.0/0 for all IPs)
-6. Go to Clusters → Connect → Choose Drivers
-7. Copy the connection string under **Add your connection string into your application code**
-8. Go to the .env file in your backend/ and paste it after **MONGO_URI=**
+**MongoDB Atlas Credentials**
+The Atlas MongoDB credentials have been added to the title page of the project presentation slides.
 
 **3. Backend Setup**
 ```
