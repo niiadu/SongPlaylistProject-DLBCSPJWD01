@@ -68,7 +68,7 @@ cd SongPlaylistProject-DLBCSPJWD01
 
 Create a .env file in backend/ with the following requirements
 ```
-MONGO_URI=your_mongodb_connection_string_here
+MONGODB_URI=your_mongodb_connection_string_here
 JWT_SECRET="your-secret"
 PORT=2000
 ```
