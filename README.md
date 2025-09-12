@@ -102,7 +102,7 @@ node sample-songs.js
 
 **5. Start Application**
 ```
-cd backend
+cd backend/
 npm run dev
 ```
 The application should be accessible on http://localhost:2000
